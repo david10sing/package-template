@@ -2,14 +2,31 @@
   "name": "package-template",
   "version": "1.0.0",
   "description": "This is a template for create packages",
-  "main": "dist/bundle.js",
-  "repository": "git@github.com:david10sing/package-template.git",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:david10sing/package-template.git"
+  },
   "author": "David Ten Sing <david10sing@hotmail.com>",
   "license": "MIT",
   "private": true,
+  "peerDependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
   "devDependencies": {
+    "@babel/core": "^7.13.8",
+    "@storybook/addon-actions": "^6.1.21",
+    "@storybook/addon-essentials": "^6.1.21",
+    "@storybook/addon-links": "^6.1.21",
+    "@storybook/react": "^6.1.21",
     "@types/react": "^17.0.2",
     "@typescript-eslint/eslint-plugin": "^4.16.1",
+    "babel-loader": "^8.2.2",
     "css-loader": "^5.1.1",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-import": "^2.22.1",
@@ -36,7 +53,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --quiet",
-    "lint-fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
+    "lint-fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "prepare": "yarn run build",
+    "preversion": "yarn run lint",
+    "version": "yarn run lint-fix && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "lint-staged": {
     "src/**/*.tsx": [
@@ -49,8 +72,5 @@
       "pre-commit": "lint-staged"
     }
   },
-  "dependencies": {
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
-  }
+  "dependencies": {}
 }

@@ -2,3 +2,5 @@
 declaration.d.ts
 .prettierrc.js
 webpack*
+react-app-env.d.ts
+dist/

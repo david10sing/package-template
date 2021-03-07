@@ -3,8 +3,10 @@
     "allowSyntheticDefaultImports": true,
     "allowJs": true,
     "baseUrl": "./src",
+    "declaration": true,
     "jsx": "react",
     "module": "es6",
+    "moduleResolution": "node",
     "noImplicitAny": true,
     "outDir": "./dist/",
     "target": "es6",
@@ -14,6 +16,7 @@
     "node_modules",
     "typings/global",
     "typings/index.d.ts",
-    "./src/subClassA.ts"
+    "./src/subClassA.ts",
+    "dist/"
   ],
 }
