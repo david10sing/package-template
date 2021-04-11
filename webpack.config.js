@@ -52,7 +52,17 @@ module.exports = {
             },
           },
           // Translates CSS into CommonJS
-          'css-loader',
+          {
+            loader:'css-loader',
+            options: {
+              modules: {
+                mode: "local",
+                localIdentName: "[path][name]__[local]--[hash:base64:5]",
+                localIdentHashPrefix: "rtc",
+              }
+            }
+          },
+          
           // Compiles Sass to CSS
           'sass-loader',
         ],

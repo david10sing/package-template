@@ -1,0 +1,36 @@
+.tagRoot {
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 1px #ccc;
+  display: inline-flex;
+  font-size: 1rem;
+  margin-bottom: 8px;
+
+  &:first-child {
+    margin-left: 8px;
+  }
+
+  & + .tagRoot {
+    margin-left: 8px;
+  }
+
+  .tagLabel {
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+  }
+
+  .tagRemoveBtn {
+    align-items: center;
+    border-left: 1px solid #ccc;
+    cursor: pointer;
+    display: flex;
+    margin-left: auto;
+    padding: 4px;
+
+    &:hover {
+      background: #ccc;
+      color: #fff;
+    }
+  }
+}
